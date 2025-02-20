@@ -5,6 +5,7 @@ from django.views import generic
 
 class Postlist(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
+    context_object_name = 'post_list'
     template_name = 'index.html'
 
 
